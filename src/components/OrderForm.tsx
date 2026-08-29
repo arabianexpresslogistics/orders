@@ -201,7 +201,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ onSuccess, onOpenSpreadshe
             <button
               type="button"
               onClick={onOpenSpreadsheet}
-              className="btn btn-secondary"
+              className="btn btn-secondary desktop-only-btn"
               style={{ padding: '0.45rem 0.95rem', fontSize: '0.85rem', gap: '0.4rem', borderColor: 'rgba(10, 58, 32, 0.2)' }}
             >
               <FileSpreadsheet size={16} style={{ color: 'var(--primary-accent)' }} />

@@ -75,7 +75,7 @@ export const OrderList: React.FC<OrderListProps> = ({ refreshTrigger, onOpenSpre
           {onOpenSpreadsheet && (
             <button 
               onClick={onOpenSpreadsheet} 
-              className="btn btn-secondary" 
+              className="btn btn-secondary desktop-only-btn" 
               style={{ padding: '0.45rem 0.9rem', fontSize: '0.85rem', gap: '0.4rem', borderColor: 'rgba(10, 58, 32, 0.25)' }}
             >
               <FileSpreadsheet size={15} style={{ color: 'var(--primary-accent)' }} />
