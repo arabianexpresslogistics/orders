@@ -84,6 +84,10 @@ h1, h2, h3, h4, h5, h6 {
   padding: 2.25rem;
   box-shadow: var(--shadow-premium);
   transition: var(--transition-smooth);
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow: hidden !important;
 }
 
 .premium-card:hover {
@@ -92,22 +96,63 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Grid System */
-.grid-cols-1 { display: grid; grid-template-columns: 1fr; gap: 1.5rem; width: 100%; }
-.grid-cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; width: 100%; }
-.grid-cols-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; width: 100%; }
+.grid-cols-1 { display: grid; grid-template-columns: 1fr; gap: 1.5rem; width: 100%; box-sizing: border-box; }
+.grid-cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; width: 100%; box-sizing: border-box; }
+.grid-cols-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; width: 100%; box-sizing: border-box; }
 .grid-cols-1 > *, .grid-cols-2 > *, .grid-cols-3 > * { min-width: 0; }
 
 @media (max-width: 768px) {
-  .grid-cols-2, .grid-cols-3 {
-    grid-template-columns: 1fr !important;
+  .grid-cols-2, .grid-cols-3, .responsive-field-grid {
+    display: flex !important;
+    flex-direction: column !important;
     gap: 1.25rem !important;
+    width: 100% !important;
   }
   .content-wrap {
-    padding: 1rem 1rem;
+    padding: 1rem 0.75rem !important;
+    box-sizing: border-box !important;
   }
   .premium-card {
-    padding: 1.5rem;
+    padding: 1.25rem 1rem !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
+}
+
+/* Date Input Styling & Strict Containment */
+.date-field-group,
+.date-input-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+}
+
+.date-input-field,
+input[type="date"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background-color: #ffffff !important;
+}
+
+input[type="date"]::-webkit-date-and-time-value {
+  text-align: left !important;
+  min-height: 1.3em !important;
+  width: 100% !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.8;
+  padding: 4px;
 }
 
 /* Styled Forms & Inputs */

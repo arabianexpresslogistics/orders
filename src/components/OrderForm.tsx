@@ -217,7 +217,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ onSuccess, onOpenSpreadshe
             <ClipboardList size={18} />
             <span>Order Info</span>
           </h3>
-          <div className="grid-cols-2">
+          <div className="grid-cols-2 responsive-field-grid">
             <div className="form-group">
               <label className="form-label">Order ID / Order Number *</label>
               <input 
@@ -231,16 +231,18 @@ export const OrderForm: React.FC<OrderFormProps> = ({ onSuccess, onOpenSpreadshe
               {errors.orderId && <span className="error-message"><AlertCircle size={12} /> {errors.orderId}</span>}
             </div>
 
-            <div className="form-group">
+            <div className="form-group date-field-group">
               <label className="form-label">Order Date *</label>
-              <input 
-                type="date" 
-                name="orderDate" 
-                value={formData.orderDate}
-                onChange={handleChange}
-                className="form-input"
-                required
-              />
+              <div className="date-input-container">
+                <input 
+                  type="date" 
+                  name="orderDate" 
+                  value={formData.orderDate}
+                  onChange={handleChange}
+                  className="form-input date-input-field"
+                  required
+                />
+              </div>
             </div>
           </div>
 
